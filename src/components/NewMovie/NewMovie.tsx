@@ -33,15 +33,15 @@ export const NewMovie: React.FC<Props> = ({ onAdd }) => {
     setImgUrl('');
     setImdbUrl('');
     setImdbId('');
-    setCount(c => c + 1);
+    setCount(prevCount => prevCount + 1);
   };
 
   return (
     <form
       className="NewMovie"
       key={count}
-      onSubmit={a => {
-        a.preventDefault();
+      onSubmit={event => {
+        event.preventDefault();
         addMovie();
         reset();
       }}
